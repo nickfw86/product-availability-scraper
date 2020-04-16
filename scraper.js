@@ -2,6 +2,7 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 require('dotenv').config()
 const url = process.env.TARGET_URL;
+let products = require('./products.js');
 
 axios.get(url)
   .then(function (response) {
