@@ -1,0 +1,23 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "scraper using axios and cheerio",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickfw86/scraper.git"
+  },
+  "author": "Nick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickfw86/scraper/issues"
+  },
+  "homepage": "https://github.com/nickfw86/scraper#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
