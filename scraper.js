@@ -7,6 +7,10 @@ axios.get(url)
   .then(function (response) {
     // handle success
     const html = response.data
+    const $ = cheerio.load(html);
+    const stockNoteBackorder = $(".stock-note.backordered");
+    const dateAvailable = stockNoteBackorder[0].children[0].data;
+    console.log(dateAvailable);
   })
   .catch(function (error) {
     // handle error
