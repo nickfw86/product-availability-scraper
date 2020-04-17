@@ -2,7 +2,9 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 require("dotenv").config();
 let products = require("./products.js");
-let url = products[0].URL;
+
+for (let i = 0; i < products.length; i++){
+let url = products[i].URL;
 
 axios
   .get(url)
@@ -14,15 +16,16 @@ axios
     const soldOut = $("p:contains(Item currently sold out)");
 
     if (soldOut.length > 0) {
-      console.log("Out Of Stock");
-    } else if (typeof stockNoteContainer[0].children[1] === "object") {
+      console.log(products[i].name + "is Out Of Stock");
+    } else if (typeof stockNoteContainer[i].children[1] === "object") {
       let availability = stockNoteContainer[0].children[1].children[0].data;
-      console.log(availability);
+      console.log(products[i].name + " has " + availability);
     } else {
-      console.log("Available");
+      console.log(products[i].name + "is Available");
     }
   })
   .catch(function (error) {
     // handle error
     console.log(error);
   });
+}
