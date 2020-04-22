@@ -19,9 +19,9 @@ axios
       console.log(products[i].name + "is Out Of Stock");
     } else if (typeof stockNoteContainer[i].children[1] === "object") {
       let availability = stockNoteContainer[0].children[1].children[0].data;
-      console.log(products[i].name + " has " + availability);
+      console.log(products[i].name + " is " + availability);
     } else {
-      console.log(products[i].name + "is Available");
+      console.log(products[i].name + " is Available");
     }
   })
   .catch(function (error) {
